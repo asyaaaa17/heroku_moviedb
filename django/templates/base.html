@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head >
+  <meta charset="UTF-8" >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  >
+  <link
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  >
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+  <title >
+    {% block title %}MovieDB{% endblock %}
+  </title>
+  <style >
+    .body {
+      font-family: Lobster;
+      font-size: xx-large;
+    }
+    .container {
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+    .errorlist {
+      color: #e11;
+    }
+    .movie-image img {
+      max-height: 10em;
+      max-width: 10em;
+    }
+    .mymdb-sidebar {
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+  </style >
+</head >
+<body >
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary ">
+  <a class="navbar-brand" href="{% url 'core:MovieList' %}">
+      Best Movies DB
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'core:MovieList' %}">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{% url 'core:TopMovies' %}">TOP 10 Movies</a>
+      <a class="nav-item nav-link" href="{% url 'email' %}">Contact me</a>
+      {% if user.is_authenticated %}
+        <a class="nav-item nav-link" href="{% url 'user:logout' %}">Log Out</a>
+      {% else %}
+        <a class="nav-item nav-link" href="{% url 'user:login' %}">Log In</a>
+        <a class="nav-item nav-link" href="{% url 'user:register' %}">Sign Up</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 mymdb-main">
+     {% block main %} {% endblock %}
+    </div>
+    <div
+        class="col-sm-3 offset-sm-1 mymdb-sidebar"
+    >
+      {% block sidebar %}
+        <div class="card" style="width: 18rem;">
+            <img src="{% static 'core/movie.jpg' %}" class="card-img-top"  alt="Card image cap"/>
+            <div class="card-body">
+              <a href="{% url 'core:TopMovies' %}" class="card-link">TOP-10</a>
+              <p class="card-text">Hey, take a look at this list with top-10 movies</p>
+            </div>
+        </div>
+      {% endblock %}
+    </div>
+  </div>
+</div>
+<nav class="navbar fixed-bottom navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'email' %}">
+      <button type="button" class="btn btn-dark">Contact me</button>
+    </a>
+  {% if user.is_authenticated %}
+  <center>
+    <a>Hello, {{ user.username }}
+      <a class="nav-item nav-link" href="{% url 'user:logout' %}">
+        <img src="{% static 'core/logout.png' %}" alt="LogIn img"/></a>
+    </a>
+  </center>
+  {% endif %}
+  <center>
+    <a class="navbar-brand" href="https://www.linkedin.com/in/anastasiia-myloserdova-520790178/">
+      <button type="button" class="btn btn-light">
+        <img src="{% static 'core/linked.png' %}" class="card-img"  alt="Linked In"/>
+      </button>
+    </a>
+    <a class="navbar-brand" href="https://github.com/asyaaaa17">
+      <button type="button" class="btn btn-light">
+        <img src="{% static 'core/git2-1.png' %}" class="card-img"  alt="GitHub"/>
+      </button>
+    </a>
+  </center>
+</nav>
+</body>
+</html>

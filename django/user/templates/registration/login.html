@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Login - {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button
+            class="btn btn-secondary">
+            Log In
+            <img src="{% static 'core/login.png' %}" alt="LogIn img"/>
+        </button>
+    </form>
+<a href="{% url 'social:begin' 'github' %}">
+    <button class="btn btn-dark">
+        LogIn with GitHub
+        <img src="{% static 'core/git2-1.png' %}" alt="GitHub img"/>
+    </button>
+</a>
+{% endblock %}

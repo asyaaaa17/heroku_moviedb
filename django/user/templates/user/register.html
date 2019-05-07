@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block main %}
+    <h1>Sign Up for MyMBD</h1>
+    <form method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button
+            type="submit"
+            class="btn btn-secondary">
+            Sign Up
+            <img src="{% static 'core/signup.png' %}" alt="SignUp img"/>
+        </button>
+    </form>
+<a href="{% url 'social:begin' 'github' %}">
+    <button class="btn btn-dark">
+        Sign Up with GitHub
+        <img src="{% static 'core/git2-1.png' %}" alt="GitHub img"/>
+    </button>
+</a>
+{% endblock %}
