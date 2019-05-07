@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from decouple import config, Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,15 +21,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'l90w7v8*1)rp0^t$2s1)@c45ykj*ueif!vmh^=@qr$c+dk^5=@'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -90,11 +88,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mymdb',
-        'USER': 'dev',
-        'PASSWORD': 'qwerty12345',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT', cast=int),
     }
 }
 
@@ -175,13 +173,13 @@ CSRF_USING_SESSIONS = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = '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'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config('EMAIL_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+EMAIL_PORT = config('E_PORT', cast=int)
+EMAIL_USE_TLS = config('E_USE_TLS', cast=bool)
 
-SOCIAL_AUTH_GITHUB_KEY = '1f1bb034b3d4051b9b0e'
-SOCIAL_AUTH_GITHUB_SECRET = '07daa2633ecb743e9a3e2e8f2dcebb6f78b94ff9'
+SOCIAL_AUTH_GITHUB_KEY = config('AUTH_GIT')
+SOCIAL_AUTH_GITHUB_SECRET = config('AUTH_SECRET_GIT')
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.github.GithubOAuth2',
