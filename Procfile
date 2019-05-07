@@ -1,1 +1,1 @@
-web: gunicorn AsyaMovieDB.wsgi
+web: gunicorn asya17.wsgi
