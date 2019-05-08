@@ -27,7 +27,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'asya17.herokuapp.com']
 
 
 # Application definition
@@ -138,6 +139,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'gathered_static_files')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+
 ]
 
 LOGIN_REDIRECT_URL = 'core:MovieList'
