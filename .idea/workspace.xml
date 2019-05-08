@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bcc9370c-5cf0-44b2-a0ec-97d2856a7145" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django/config/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/django/config/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2115">
-              <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+            <state relative-caret-position="-334">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
               <folding>
                 <element signature="e#308#317#0" expanded="true" />
               </folding>
@@ -33,10 +34,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-115" />
+            <state relative-caret-position="45">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -104,6 +107,11 @@
               <item name="AsyaMovieDB" type="b2602c69:ProjectViewProjectNode" />
               <item name="AsyaMovieDB" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="AsyaMovieDB" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AsyaMovieDB" type="462c0819:PsiDirectoryNode" />
+              <item name="django" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -146,12 +154,12 @@
       <workItem from="1557243858807" duration="331000" />
       <workItem from="1557244268761" duration="6015000" />
       <workItem from="1557252537773" duration="6597000" />
-      <workItem from="1557314216244" duration="6073000" />
+      <workItem from="1557314216244" duration="6484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19016000" />
+    <option name="totallyTimeSpent" value="19427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="25" width="960" height="988" extended-state="4" />
@@ -366,6 +374,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -373,19 +386,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/media_root/1/980c8596-5553-4f8d-b702-96fcb6214c2c.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/django/config/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2115">
-          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
+        <state relative-caret-position="-334">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
           <folding>
             <element signature="e#308#317#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115" />
       </provider>
     </entry>
   </component>
