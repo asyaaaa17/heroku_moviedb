@@ -138,14 +138,16 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 LOGIN_REDIRECT_URL = 'core:MovieList'
 
 MEDIA_URL = '/uploaded/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '../media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
 CACHES = {
     'default': {
