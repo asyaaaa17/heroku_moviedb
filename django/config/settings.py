@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 from decouple import config, Csv
-# django-heroku setting
-import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -190,4 +188,3 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-django_heroku.settings(locals())

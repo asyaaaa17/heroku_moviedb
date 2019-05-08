@@ -1,1 +1,0 @@
-web: gunicorn asya17.wsgi
